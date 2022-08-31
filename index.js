@@ -1,11 +1,10 @@
 const express = require('express');
 const app = express();
 const port = 5000;
+const leagueRouter = require('./routes/league');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use('/league', leagueRouter);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`App listening on port ${port}`);
 })
